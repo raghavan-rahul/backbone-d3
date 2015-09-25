@@ -1,7 +1,7 @@
 /*
-* Specify the routes for your app
-* @author Rahul Raghavan
-*/
+ * Specify the routes for your app
+ * @author Rahul Raghavan
+ */
 var AppRoute = Backbone.Router.extend({
 
     routes: { // define the routes for the app
