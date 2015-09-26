@@ -8,6 +8,8 @@ var BarChartView = Backbone.View.extend({
      */
     initialize: function (options) {
         // setting the default options for the Bar chart
+        options.width = options.width || 960;
+        options.height = options.height || 500;
         this.render(options);
     },
 
@@ -16,8 +18,8 @@ var BarChartView = Backbone.View.extend({
      */
     render: function (options) {
         var margin = {top: 20, right: 20, bottom: 30, left: 40},
-            width = 960 - margin.left - margin.right,
-            height = 500 - margin.top - margin.bottom
+            width = options.width - margin.left - margin.right,
+            height = options.height - margin.top - margin.bottom
             data = this.__getData(),
             colors = this.__getColors();
 
@@ -36,7 +38,7 @@ var BarChartView = Backbone.View.extend({
             .orient("left")
             .ticks(10, "%");
 
-        var svg = d3.select("body").append("svg")
+        var svg = d3.select(options.el).append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")

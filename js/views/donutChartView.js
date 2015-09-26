@@ -8,8 +8,8 @@ var DonutChartView = Backbone.View.extend({
      */
     initialize: function (options) {
         // setting the default options for the donut chart
-        options.width = 960;
-        options.height = 500;
+        options.width = options.width || 960;
+        options.height = options.height || 500;
         options.innerRadius = 0; // set to zero for donut chart
         this.render(options);
     },
@@ -37,7 +37,7 @@ var DonutChartView = Backbone.View.extend({
                 return d.value;
             });
 
-        var svg = d3.select("body").append("svg")
+        var svg = d3.select(options.el).append("svg")
             .attr("width", width)
             .attr("height", height)
             .append("g")
