@@ -1,34 +1,35 @@
 /*
- * Initialize the pie chart view and render the pie chart
+ * Initialize the donut chart view and render the donut chart
  * @author Rahul Raghavan
  */
-var PieChartView = Backbone.View.extend({
+var DonutChartView = Backbone.View.extend({
     /*
-     * Initializes the pie chart with options and call the render function
+     * Initializes the donut chart with options and call the render function
      */
     initialize: function (options) {
-        // setting the default options for the pie chart
+        // setting the default options for the donut chart
         options.width = 960;
         options.height = 500;
-        options.innerRadius = 0; // set to zero for pie chart
+        options.innerRadius = 0; // set to zero for donut chart
         this.render(options);
     },
 
     /*
-     * Renders the pie chart
+     * Renders the donut chart
      */
     render: function (options) {
         var width = options.width,
             height = options.height,
-            radius = Math.min(width, height) / 2;
-        var colors = this.__getColors();
-        var data = this.__getData();
+            radius = Math.min(width, height) / 2,
+            data = this.__getData(),
+            colors = this.__getColors();
+
         var color = d3.scale.ordinal()
             .range(colors);
 
         var arc = d3.svg.arc()
             .outerRadius(radius - 10)
-            .innerRadius(options.innerRadius);
+            .innerRadius(radius - 70);
 
         var pie = d3.layout.pie()
             .sort(null)
@@ -101,14 +102,14 @@ var PieChartView = Backbone.View.extend({
                 "label": "≥65",
                 "value": "612463"
             }
-        ];
-        ; // specify the data for the pie chart
+        ]; // specify the data for the donut chart
     },
 
     /*
-     * Returns the colors for the pie chart
+     * Returns the colors for the donut chart
      */
     __getColors: function () {
-        return ["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]; // specify the colors for the pie chart
+        return ["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]; // specify the colors for the donut chart
     }
 });
+

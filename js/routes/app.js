@@ -5,12 +5,16 @@
 var AppRoute = Backbone.Router.extend({
 
     routes: { // define the routes for the app
-        '*actions': '__renderPieChart'
+        'pie-chart': '__renderPieChart',
+        'donut-chart': '__renderDonutChart'
     },
     __renderPieChart: function () {
         // renders the Pie Chart view
         var pieChartView = new PieChartView({el: "#chart"});
-
+    },
+    __renderDonutChart: function () {
+        // renders the Donut Chart view
+        var donutChartView = new DonutChartView({el: "#chart"});
     }
 
 });
