@@ -7,9 +7,10 @@
         'views/pieChartView',
         'views/donutChartView',
         'views/barChartView',
-        'views/scatterPlotView'
+        'views/scatterPlotView',
+        'views/usMapView'
         ],
-        function ($, _, Backbone, d3, PieChartView, DonutChartView, BarChartView, ScatterPlotView) {
+        function ($, _, Backbone, d3, PieChartView, DonutChartView, BarChartView, ScatterPlotView, UsMapView) {
 
         "use strict";
         /*
@@ -45,7 +46,10 @@
                 var pieChartView = new PieChartView({el: "#pie-chart", "width": 500, "height": 360});
             },
             __renderScatterPlot: function () {
-                var mapView = new ScatterPlotView({el: "#chart"});
+                var scatterPlotView = new ScatterPlotView({el: "#chart"});
+            },
+            __renderMap: function () {
+                var usMapView = new UsMapView({el: "#map"});
             }
             
         });

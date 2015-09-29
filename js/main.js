@@ -21,6 +21,16 @@ require.config({
             name : "d3",
             location : "./dependencies",
             main : "d3.min"
+        },
+        {
+            name : "topojson",
+            location : "./dependencies",
+            main : "topojson"
+        },
+        {
+            name : "json",
+            location : "./dependencies",
+            main : "json"
         }
     ]
 });
