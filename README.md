@@ -38,7 +38,7 @@ Go to the example directory and you can find all the examples like:
     Scatter Plot Chart
     Pie Chart
     Donut Chart
-    
+    Albers US Map ( Please specify the url for the json file on your server/localhost)
 ## Dependencies
    1. BackboneJs + Underscore
    2. D3
